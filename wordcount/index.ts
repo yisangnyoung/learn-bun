@@ -1,11 +1,13 @@
 // index.ts
-const filename = Bun.argv[2];
-console.log(Bun.argv);
-
-if (!filename) {
-  console.error("에러: 읽을 파일명을 입력해 주세요!");
-  process.exit(1);
+function countWords(text: string): number {
+  return text
+    .trim()
+    .split(/\s+/)
+    .filter((word) => word.length > 0).length;
 }
+
+const filename = Bun.argv[2];
 const file = Bun.file(filename);
 const contents = await file.text();
-console.log(contents);
+const count = countWords(contents);
+console.log(`${count} words`);
