@@ -4,12 +4,16 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "typecheck": "bun check"
+    "typecheck": "bun check",
+    "count": "bun run index.ts"
   },
   "devDependencies": {
     "@types/bun": "latest"
   },
   "peerDependencies": {
     "typescript": "^7"
+  },
+  "dependencies": {
+    "cowsay": "^1.6.0"
   }
 }
